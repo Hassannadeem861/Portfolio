@@ -5,6 +5,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import { profile } from "@/data/profile";
 
 let pluginsRegistered = false;
 function ensurePlugins() {
@@ -469,7 +470,7 @@ export function useIsakAnimations() {
         document
             .querySelectorAll<HTMLElement>(".text-rotate .text")
             .forEach((circularText) => {
-                const text = "award winning agency - since 2022 -";
+                const text = `${profile.duty} -`;
                 const chars = text.split("");
                 const degree = 360 / chars.length;
                 circularText.innerHTML = "";

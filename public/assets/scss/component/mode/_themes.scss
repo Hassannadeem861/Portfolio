@@ -387,7 +387,7 @@
             background: var(--dark);
 
             img {
-                filter: grayscale(100%);
+                // filter: grayscale(100%);
             }
 
             .bg-item-svg {
@@ -437,11 +437,15 @@
 
     .sidebar-user .user-info {
         .greeting {
-            color: var(--black-72) !important;
+            color: var(--white) !important;
+
+            .item-text {
+                color: var(--white) !important;
+            }
         }
 
         .introduce {
-            color: var(--black-56) !important;
+            color: var(--white) !important;
         }
 
         .br-line {

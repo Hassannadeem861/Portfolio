@@ -18,15 +18,28 @@ export function Education() {
             <div className="timeline-dot" />
             <div className="timeline-content">
               <div className="icon">
-                <ImageSwitch
-                  light={item.icon.light}
-                  dark={item.icon.dark}
-                  width={item.icon.width}
-                  height={item.icon.height}
-                />
+                {item.icon ? (
+                  <ImageSwitch
+                    light={item.icon.light}
+                    dark={item.icon.dark}
+                    width={item.icon.width}
+                    height={item.icon.height}
+                  />
+                ) : (
+                  <span className="timeline-icon-fallback" aria-hidden="true">
+                    {item.iconLabel}
+                  </span>
+                )}
               </div>
               <p className="timeline-role fw-medium text-black-72">{item.role}</p>
               <p className="timeline-desc text-body-3 text-black-56">{item.description}</p>
+              {item.details && (
+                <ul className="timeline-details text-body-3 text-black-56">
+                  {item.details.map((detail) => (
+                    <li key={detail}>{detail}</li>
+                  ))}
+                </ul>
+              )}
             </div>
           </div>
         ))}

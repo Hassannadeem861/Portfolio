@@ -287,12 +287,6 @@
             align-items: center;
         }
 
-        .bg-item-svg {
-            // display: flex;
-            // align-items: center;
-            // justify-content: flex-start;
-        }
-
         .avaiable-dot {
             position: absolute;
             justify-content: center;
@@ -325,6 +319,14 @@
     .user-info {
         .greeting {
             padding-bottom: 20px;
+
+            .item-text {
+                color: var(--white) !important;
+            }
+        }
+
+        .introduce {
+            color: var(--white) !important;
         }
 
         .br-line {
@@ -363,11 +365,6 @@
                 aspect-ratio: calc(468 / 856);
             }
         }
-    }
-
-    &.active {
-        transform: translateY(-20px);
-        @include hidden;
     }
 
     @include res(lg, min) {
@@ -429,9 +426,9 @@
                 left: 0;
                 right: 0;
                 top: auto;
-                height: 50%;
+                height: 58%;
                 background: linear-gradient(to top,
-                        rgba(0, 0, 0, 0.8) 60%,
+                    rgba(0, 0, 0, 0.88) 45%,
                         transparent 100%);
             }
         }
@@ -1017,6 +1014,49 @@
         margin-bottom: 88px;
     }
 
+    .about-profile {
+        display: grid;
+        grid-template-columns: minmax(180px, 0.7fr) minmax(0, 1.3fr);
+        gap: 32px;
+        align-items: center;
+        margin-bottom: 24px;
+    }
+
+    .about-profile-image {
+        overflow: hidden;
+        border-radius: 16px;
+        aspect-ratio: 0.82;
+        background-color: var(--black-6);
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .about-profile-content {
+        .s-desc {
+            margin-bottom: 20px;
+        }
+    }
+
+    .about-profile-stack {
+        line-height: 1.7;
+        margin-bottom: 28px;
+    }
+
+    .about-profile-actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 18px;
+
+        .link {
+            overflow-wrap: anywhere;
+        }
+    }
+
     .s-desc {
         margin-bottom: 88px;
     }
@@ -1043,6 +1083,15 @@
     @include res(md) {
         .s-desc {
             margin-bottom: 40px;
+        }
+
+        .about-profile {
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+
+        .about-profile-image {
+            max-width: 280px;
         }
     }
 }

@@ -10,8 +10,6 @@ export const navItems: NavItem[] = [
   { href: "#about", label: "About", icon: "icon-user-circle" },
   { href: "#education", label: "Education", icon: "icon-edu" },
   { href: "#work", label: "Work", icon: "icon-high-light" },
-  { href: "#service", label: "Services", icon: "icon-service" },
   { href: "#tech", label: "Tech", icon: "icon-tech-stack" },
-  { href: "#testimonial", label: "Testimonials", icon: "icon-tes", separator: "after" },
   { href: "#contact", label: "Contact", icon: "icon-send" },
 ];

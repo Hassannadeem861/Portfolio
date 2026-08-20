@@ -1984,7 +1984,7 @@ h6,
   flex-shrink: 0;
   border-radius: 50% !important;
   overflow: hidden;
-  filter: grayscale(100%);
+  /* filter: grayscale(100%); */
 }
 .comment-wrap .image img {
   width: 100%;
@@ -6906,17 +6906,17 @@ button.animate-btn::after,
   color: var(--black-72);
 }
 .dark-mode .sidebar-user .user-info .greeting {
-  color: var(--black-72) !important;
+  color: var(--white) !important;
 }
 .dark-mode .sidebar-user .user-info .introduce {
-  color: var(--black-56) !important;
+  color: var(--white-72) !important;
 }
 .dark-mode .sidebar-user .user-info .br-line {
   background-color: var(--black-8);
 }
 .dark-mode .tf-btn-action .text,
 .dark-mode .tf-btn-action .icon {
-  color: var(--black);
+  color: var(--white);
 }
 .dark-mode .action-down {
   color: var(--black-72);

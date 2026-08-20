@@ -1,32 +1,39 @@
 export type TechItem = {
   name: string;
   duty: string;
-  image: { light: string; dark?: string; width: number; height: number };
+  image?: { light: string; dark?: string; width: number; height: number };
   progress: number;
 };
 
 export const techStack: TechItem[] = [
   {
-    name: "Figma",
-    duty: "Leading design tool",
-    image: { light: "/assets/images/section/tech-1.svg", width: 19, height: 28 },
-    progress: 80,
-  },
-  {
-    name: "Framer",
-    duty: "No-code website builder",
-    image: {
-      light: "/assets/images/section/tech-2.svg",
-      dark: "/assets/images/section/tech-2_dark.svg",
-      width: 18,
-      height: 28,
-    },
+    name: "React JS",
+    duty: "Component-based frontend development",
     progress: 90,
   },
   {
-    name: "Adobe Photoshop",
-    duty: "Raster graphics editor",
-    image: { light: "/assets/images/section/tech-3.svg", width: 29, height: 28 },
-    progress: 60,
+    name: "Next.js",
+    duty: "Production-ready React applications",
+    progress: 88,
+  },
+  {
+    name: "Node.js",
+    duty: "Scalable server-side JavaScript",
+    progress: 85,
+  },
+  {
+    name: "Express.js",
+    duty: "Fast and maintainable APIs",
+    progress: 84,
+  },
+  {
+    name: "MongoDB",
+    duty: "Flexible document database solutions",
+    progress: 82,
+  },
+  {
+    name: "MySQL",
+    duty: "Reliable relational data modeling",
+    progress: 80,
   },
 ];

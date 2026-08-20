@@ -17,12 +17,23 @@ export function Tech() {
                     <li key={i} className="wg-tech">
                         <div className="tech-infor effectFade fadeUp no-div">
                             <div className="tech_image">
-                                <ImageSwitch
-                                    light={t.image.light}
-                                    dark={t.image.dark}
-                                    width={t.image.width}
-                                    height={t.image.height}
-                                />
+                                {t.image ? (
+                                    <ImageSwitch
+                                        light={t.image.light}
+                                        dark={t.image.dark}
+                                        width={t.image.width}
+                                        height={t.image.height}
+                                    />
+                                ) : (
+                                    <span className="tech-initials" aria-hidden="true">
+                                        {t.name
+                                            .split(/[^a-zA-Z]+/)
+                                            .filter(Boolean)
+                                            .map((part) => part[0])
+                                            .join("")
+                                            .slice(0, 2)}
+                                    </span>
+                                )}
                             </div>
                             <div className="tech_info">
                                 <p className="info__name fw-medium text-black-72">

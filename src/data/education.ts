@@ -2,29 +2,56 @@ export type TimelineItem = {
   period: string;
   role: string;
   description: string;
-  icon: { light: string; dark?: string; width: number; height: number };
+  details?: string[];
+  icon?: { light: string; dark?: string; width: number; height: number };
+  iconLabel?: string;
 };
 
 export const educationItems: TimelineItem[] = [
   {
-    period: "2023 - Now",
-    role: "Independent Designer & No-Code Developer",
+    period: "November 2025 - Present",
+    role: "Undergraduate Student at Virtual University of Pakistan",
     description:
-      "Helping startups and creative teams launch websites, scale their brand identity, and build powerful no-code products with Framer.",
-    icon: { light: "/assets/images/logo/logo-3.svg", dark: "/assets/images/logo/logo-4.svg", width: 32, height: 32 },
+      "Currently continuing my degree and preparing to start the third semester.",
+    details: [
+      "Admission completed in November 2025.",
+      "Third semester is currently in progress.",
+    ],
+    iconLabel: "VU",
   },
   {
-    period: "2021 - 2023",
-    role: "Web & Brand Designer at Creative Studio",
+    period: "November 2025 - Present",
+    role: "Full Stack Developer at Tecxeo Private Limited",
     description:
-      "Led projects across branding and digital design, delivering interfaces and websites that balanced usability with striking visual impact.",
-    icon: { light: "/assets/images/item/edu-2.svg", dark: "/assets/images/item/edu-2_dark.svg", width: 29, height: 32 },
+      "Building and maintaining full-stack web applications for client projects.",
+    details: [
+      "Developing and maintaining full-stack web applications using React JS and Node JS.",
+      "Building RESTful APIs and integrating third-party services for client projects.",
+      "Collaborating in an agile team to deliver product features on schedule.",
+    ],
+    iconLabel: "TP",
   },
   {
-    period: "2019 - 2021",
-    role: "Junior Designer at Design Academy",
+    period: "January 2025 - October 2025",
+    role: "Full Stack Developer at EB Technologies",
     description:
-      "Gained hands-on experience in brand systems and interface design while working closely with mentors to sharpen creative direction.",
-    icon: { light: "/assets/images/item/edu-3.svg", dark: "/assets/images/item/edu-3_dark.svg", width: 120, height: 32 },
+      "Delivered responsive web and backend solutions for business and client projects.",
+    details: [
+      "Designed and developed responsive web interfaces with React JS and Bootstrap.",
+      "Built and deployed backend services using Node JS, Express, and MongoDB.",
+      "Worked on cross-platform mobile applications using React Native.",
+    ],
+    iconLabel: "EB",
+  },
+  {
+    period: "July 2024 - October 2024",
+    role: "Full Stack Developer Trainee at Saylani Boot Camp",
+    description:
+      "Completed intensive practical training in modern full-stack web development.",
+    details: [
+      "Completed an intensive bootcamp covering MERN stack fundamentals.",
+      "Built capstone projects to apply frontend, backend, and database concepts.",
+    ],
+    iconLabel: "SB",
   },
 ];

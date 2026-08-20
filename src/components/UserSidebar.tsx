@@ -23,12 +23,11 @@ export function UserSidebar({ variant = "v1" }: UserSidebarProps) {
                              priority
                           /> */}
                       
-                        <img
+                        <Image
                             width={468}
                             height={856}
-                            src="/assets/images/avatar/avatar-boy.png"
-                            alt="Avatar"
-          
+                            src="/assets/images/avatar/about.png"
+                            alt={`${profile.fullName} profile photo`}
                         />
                     </div>
               
@@ -63,7 +62,21 @@ export function UserSidebar({ variant = "v1" }: UserSidebarProps) {
                     {profile.socials.map((s) => (
                         <li key={s.label}>
                             <a href={s.href} aria-label={s.label}>
-                                <i className={`icon ${s.icon}`} />
+                                {s.label === "GitHub" ? (
+                                    <svg
+                                        className="social-icon-svg"
+                                        width="20"
+                                        height="20"
+                                        viewBox="0 0 24 24"
+                                        >
+                                        <path
+                                            fill="currentColor"
+                                            d="M12 2C6.48 2 2 6.58 2 12.24c0 4.52 2.87 8.35 6.84 9.71.5.1.68-.22.68-.49v-1.72c-2.78.62-3.37-1.22-3.37-1.22-.45-1.19-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.58 2.36 1.13 2.94.86.09-.67.35-1.13.64-1.39-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.02-2.75-.1-.26-.44-1.3.1-2.71 0 0 .83-.27 2.75 1.05A9.28 9.28 0 0 1 12 9.19c.85 0 1.7.12 2.49.36 1.92-1.32 2.75-1.05 2.75-1.05.54 1.41.2 2.45.1 2.71.63.72 1.02 1.63 1.02 2.75 0 3.93-2.35 4.8-4.58 5.05.36.32.68.94.68 1.9v2.55c0 .27.18.6.69.49A10.25 10.25 0 0 0 22 12.24C22 6.58 17.52 2 12 2Z"
+                                        />
+                                    </svg>
+                                ) : (
+                                    <i className={`icon ${s.icon}`} />
+                                )}
                             </a>
                         </li>
                     ))}
@@ -101,7 +114,7 @@ export function UserSidebar({ variant = "v1" }: UserSidebarProps) {
                     <p
                         className={
                             dotIsInline
-                                ? "avaiable-dot text-body-3 text-white-72 fw-medium"
+                                ? "avaiable-dot text-body-3 text-black-72 fw-medium"
                                 : "avaiable-dot text-body-3 fw-medium d-sm-none"
                         }
                     >
@@ -121,7 +134,7 @@ export function UserSidebar({ variant = "v1" }: UserSidebarProps) {
                             ))}
                         </span>
                     </h5>
-                    <p className="introduce text-white-56 letter-space--05 text-body-3">
+                    <p className="introduce text-white letter-space--05 text-body-3">
                         {profile.introBio}
                     </p>
                     <div className="br-line" />

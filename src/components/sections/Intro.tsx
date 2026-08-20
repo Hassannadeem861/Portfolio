@@ -1,4 +1,5 @@
 import { BrandSlider } from "@/components/BrandSlider";
+import { profile } from "@/data/profile";
 
 export function Intro() {
   return (
@@ -15,9 +16,9 @@ export function Intro() {
           />
         </div>
         <div className="author-info letter-space--05">
-          <p className="info_name text-black">Muhammad Hassan</p>
+          <p className="info_name text-black">{profile.fullName}</p>
           <p className="info_duty text-black-50 text-body-3">
-            Full Stack Developer
+            {profile.duty}
           </p>
         </div>
       </div>

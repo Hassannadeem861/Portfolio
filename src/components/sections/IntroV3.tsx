@@ -1,5 +1,6 @@
 import { BrandSlider } from "@/components/BrandSlider";
 import { ImageSwitch } from "@/components/ImageSwitch";
+import { profile } from "@/data/profile";
 
 export function IntroV3() {
   return (
@@ -9,8 +10,8 @@ export function IntroV3() {
           <img loading="lazy" width={23} height={31} src="/assets/images/avatar/avatar-boy.png" alt="avatar" />
         </div>
         <div className="author-info letter-space--05">
-          <p className="info_name text-black">Alexander Isak</p>
-          <p className="info_duty text-black-50 text-body-3">UI Designer & No-Code Developer</p>
+          <p className="info_name text-black">{profile.fullName}</p>
+          <p className="info_duty text-black-50 text-body-3">{profile.duty}</p>
         </div>
       </div>
 
