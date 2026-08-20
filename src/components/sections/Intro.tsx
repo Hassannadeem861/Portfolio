@@ -12,7 +12,7 @@ export function Intro() {
             width={50}
             height={50}
             src="/assets/images/avatar/avatar-boy.png"
-            alt="avatar"
+            alt={`${profile.fullName} - ${profile.duty}`}
           />
         </div>
         <div className="author-info letter-space--05">
