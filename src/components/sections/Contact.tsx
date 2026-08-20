@@ -1,17 +1,30 @@
 "use client";
 
+import emailjs from "@emailjs/browser";
+import { useState } from "react";
 import { profile } from "@/data/profile";
 
 export function Contact() {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    const name = String(formData.get("name") || "");
-    const email = String(formData.get("email") || "");
-    const message = String(formData.get("message") || "");
-    const subject = encodeURIComponent(`Portfolio enquiry from ${name}`);
-    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
-    window.location.href = `mailto:${profile.email}?subject=${subject}&body=${body}`;
+    const form = e.currentTarget;
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
+    if (!publicKey) {
+      setStatus("error");
+      return;
+    }
+
+    setStatus("sending");
+    try {
+      await emailjs.sendForm("service_di62anm", "template_lglsnw7", form, publicKey);
+      form.reset();
+      setStatus("success");
+    } catch {
+      setStatus("error");
+    }
   };
 
   return (
@@ -25,6 +38,16 @@ export function Contact() {
         and impactful together
       </h4>
       <form className="form-contact" id="contactform" onSubmit={handleSubmit} noValidate>
+        {status === "success" && (
+          <div className="flat-alert msg-success" role="status">
+            Thanks, your message has been sent successfully.
+          </div>
+        )}
+        {status === "error" && (
+          <div className="flat-alert msg-error" role="alert">
+            Message could not be sent. Please email me directly at {profile.email}.
+          </div>
+        )}
         <div className="form-content effectFade fadeUp no-div">
           <fieldset className="field-ip">
             <input type="text" name="name" id="name" placeholder="Your Name *" required />
@@ -38,8 +61,8 @@ export function Contact() {
         </div>
         <div className="form-action effectFade fadeUp no-div">
           <div className="send-wrap">
-            <button type="submit" className="tf-btn animate-btn animate-dark">
-              <span className="text-body-3">Send Message</span>
+            <button type="submit" className="tf-btn animate-btn animate-dark" disabled={status === "sending"}>
+              <span className="text-body-3">{status === "sending" ? "Sending..." : "Send Message"}</span>
             </button>
           </div>
           <a href={`mailto:${profile.email}`} className="text-body-1 link letter-space--2 text-black-72">
