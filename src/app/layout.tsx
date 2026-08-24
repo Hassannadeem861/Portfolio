@@ -63,8 +63,11 @@ export const metadata: Metadata = {
         icon: "/assets/images/logo/favicon.svg",
         apple: "/assets/images/logo/favicon.svg",
     },
+    other: {
+    "google-site-verification": "CWD7XdRq_sC7j4vcmQQtd0hfaCc4T-fyIiHNMH3Ykvs"
+    }
 };
-
+{/* <meta name="google-site-verification" content="CWD7XdRq_sC7j4vcmQQtd0hfaCc4T-fyIiHNMH3Ykvs" /> */}
 export const viewport: Viewport = {
     width: "device-width",
     initialScale: 1,
