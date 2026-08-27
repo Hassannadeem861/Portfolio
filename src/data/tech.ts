@@ -12,6 +12,11 @@ export const techStack: TechItem[] = [
     progress: 90,
   },
   {
+    name: "React Native",
+    duty: "Cross-platform mobile application development",
+    progress: 85,
+  },
+  {
     name: "Next.js",
     duty: "Production-ready React applications",
     progress: 88,

@@ -59,10 +59,6 @@ export const metadata: Metadata = {
         description: siteDescription,
         images: [profileImage],
     },
-    icons: {
-        icon: "/assets/images/logo/favicon.svg",
-        apple: "/assets/images/logo/favicon.svg",
-    },
     other: {
     "google-site-verification": "CWD7XdRq_sC7j4vcmQQtd0hfaCc4T-fyIiHNMH3Ykvs"
     }
@@ -110,6 +106,9 @@ export default function RootLayout({
 
     return (
         <html lang="en-US" suppressHydrationWarning>
+        <head>
+            <link rel="icon" href="/favicon.ico" sizes="any"/>
+        </head>
             <body>
                 <script
                     type="application/ld+json"
