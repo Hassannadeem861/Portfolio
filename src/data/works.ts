@@ -6,9 +6,32 @@ export type Work = {
   tags: string[];
   image: string;
   logo: string;
+  url?: string;
 };
 
 export const works: Work[] = [
+  {
+    title: "ZEOTON – Gaming Accessories Store",
+    description:
+      "E-commerce store for gaming gear across Pakistan with category browsing, wishlist, compare, order tracking, Cash on Delivery and WhatsApp support.",
+    year: "2025",
+    role: "Full Stack Developer",
+    tags: ["Next.js", "E-commerce", "Cloudinary"],
+    image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1200&q=85",
+    logo: "/assets/images/logo/logo-2.svg",
+    url: "https://www.zeoton.online/",
+  },
+  {
+    title: "Nadeem Marbles – Tile & Marble Fixing",
+    description:
+      "Bilingual (English/Urdu) business site for a Karachi tile and marble contractor, with service pages and an interactive 3D floor preview for stones, patterns and tile sizes.",
+    year: "2025",
+    role: "Full Stack Developer",
+    tags: ["Next.js", "i18n", "3D Preview"],
+    image: "https://nadeem-marble.vercel.app/images/stock/hero-marble-lobby.webp",
+    logo: "/assets/images/logo/logo-2.svg",
+    url: "https://nadeem-marble.vercel.app/en",
+  },
   {
     title: "Full-Stack Web Applications",
     description:

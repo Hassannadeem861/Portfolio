@@ -85,14 +85,22 @@ export function Work() {
                                             <div className="br-line" />
                                             <div className="group-action">
                                                 <a
-                                                    href="#"
+                                                    href={w.url ?? "#contact"}
+                                                    {...(w.url
+                                                        ? {
+                                                              target: "_blank",
+                                                              rel: "noopener noreferrer",
+                                                          }
+                                                        : {})}
                                                     className="tf-btn-action style-white"
                                                 >
                                                     <span className="ic-wrap">
                                                         <i className="icon icon-arrow-right-top" />
                                                     </span>
                                                     <span className="text text-body-3 letter-space--05 fw-medium">
-                                                        Let’s talk
+                                                        {w.url
+                                                            ? "Visit site"
+                                                            : "Let’s talk"}
                                                     </span>
                                                     <span className="ic-wrap">
                                                         <i className="icon icon-arrow-right-top" />
